@@ -1,0 +1,8 @@
+---
+title: "Welcome to case studies!"
+output: 
+  html_document:
+    toc_float: false
+---
+
+Welcome to case studies 101!

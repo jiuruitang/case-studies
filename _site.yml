@@ -1,0 +1,34 @@
+name: "Case Studies"
+output_dir: "."
+navbar:
+  title: "Data Case Studies"
+  type: inverse
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "Week 1"
+      href: w01.html
+    - text: "Week 2"
+      href: w02.html
+    - text: "Week 3"
+      href: w03.html
+    - text: "Week 4"
+      href: w04.html
+    - text: "Week 5"
+      href: w05.html
+    - text: "Week 6"
+      href: w06.html
+    - text: "Week 7"
+      href: w07.html
+    - text: "Week 8"
+      href: w08.html
+output:
+  html_document:
+    theme: yeti
+    highlight: tango
+    fig_caption: true
+    toc: true
+    toc_float:
+      collapsed: false
+      smooth_scroll: true
+    css: styles.css
