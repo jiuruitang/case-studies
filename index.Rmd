@@ -9,4 +9,8 @@ Welcome to case studies 101!
 
 Thank you for clicking!
 
+<<<<<<< HEAD
 Update master branch only.
+=======
+Only on development.
+>>>>>>> development
