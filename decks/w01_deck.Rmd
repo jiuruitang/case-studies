@@ -2,32 +2,18 @@
 title: 
 output: 
   revealjs::revealjs_presentation:
-    css: ../styles.css
+    theme: night
     highlight: tango
     center: true
     transition: none
+    css: styles.css
+    fig_caption: true
     reveal_options:
       progress: true
       slideNumber: true
+      
   
 ---
-```{r}
-  library(knitr)
-  library(xtable)
-  opts_knit$set(root.dir=normalizePath('../../')) # go up levels
-  options(scipen=999) # turn off scientific notation for numbers
-  opts_chunk$set(echo=FALSE, warning=FALSE, message=FALSE)
-  nocomma <- function(x){structure(x,class="nocomma")}
-  knit_hooks$set(inline = function(x) {
-      if(is.na(as.numeric(x))) return(x)
-      if(!inherits(x,"nocomma")) return(prettyNum(x, big.mark=","))
-      if(inherits(x,"nocomma")) return(x)
-      return(x) # default
-  })
-```
-
-
-
 
 
 ## Case Study 1: Birthweight
@@ -45,7 +31,7 @@ Much of the variability in birthweight is explained by gestational age at delive
 
 ## Birthweight as a function of gestational age at delivery
 
-![Mean birthweight for gestational age (+/- SD) from Talge et al., 2014 Pediatrics](figures/gabwt.jpg){width=60%}
+![Mean birthweight for gestational age (+/- SD) from Talge et al., 2014 Pediatrics](figures/gabwt.jpg){width=70%}
 
 ## Case Study Data
 
@@ -109,7 +95,7 @@ Test data are important because of the problem of \emph{overfitting}, which aris
 James et al (2013) consider test MSE for a variety of polynomial functions of a predictor variable $x$.
 
 
-![Test MSE for 1st-10th order polynomials in $x$ from James et al (2013)](figures/val1.png){width=60%}
+![Test MSE for 1st-10th order polynomials in $x$ from James et al (2013)](figures/val1.png){width=50%}
 
 While it is difficult to choose between higher-order polynomials, it is clear that a linear term in $x$ is insufficient.
 
@@ -117,7 +103,7 @@ While it is difficult to choose between higher-order polynomials, it is clear th
 
 In a small dataset, the random split of the data can have considerable impact on the results, as seen in this figure (also from James) that shows results form 10 different random 50:50 training:test data splits in a sample of just under 400 observations.
 
-![Test MSE for 1st-10th order polynomials in $x$ over 10 splits from James et al (2013)](figures/val2.png){width=60%}
+![Test MSE for 1st-10th order polynomials in $x$ over 10 splits from James et al (2013)](figures/val2.png){width=50%}
 
 ## Cross-Validation
 
