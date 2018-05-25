@@ -2,11 +2,127 @@
 title: 
 output: 
   revealjs::revealjs_presentation:
-    theme: white
+    css: ../styles.css
     highlight: tango
     center: true
     transition: none
     reveal_options:
       progress: true
       slideNumber: true
+  
 ---
+```{r}
+  library(knitr)
+  library(xtable)
+  opts_knit$set(root.dir=normalizePath('../../')) # go up levels
+  options(scipen=999) # turn off scientific notation for numbers
+  opts_chunk$set(echo=FALSE, warning=FALSE, message=FALSE)
+  nocomma <- function(x){structure(x,class="nocomma")}
+  knit_hooks$set(inline = function(x) {
+      if(is.na(as.numeric(x))) return(x)
+      if(!inherits(x,"nocomma")) return(prettyNum(x, big.mark=","))
+      if(inherits(x,"nocomma")) return(x)
+      return(x) # default
+  })
+```
+
+
+
+
+
+## Case Study 1: Birthweight
+
+Birthweight is a commonly-used indicator of a newborn infant's health status. Because this indicator is easily obtained, it is a critical component of population health reporting by the World Health Organization and governments around the globe. The distribution of birthweight has often been described as approximately normal, though the left tail in particular is inflated relative to that from a Gaussian distribution.
+
+## Distribution of birthweight, Norway 1992-1998
+
+![Distribution of birthweights for 405 676 live and still births, Norway, 1992–1998, from Wilcox, 2001 IJE](figures/wilcox.jpg)
+
+
+## Variability in birthweight
+
+Much of the variability in birthweight is explained by gestational age at delivery. A baby typically spends around 38 weeks in the uterus, but the average length of gestation is counted at 40 weeks. Pregnancy is counted from the last day of a woman's menstrual period (which is easily measured), but the date of conception is typically around two weeks later.
+
+## Birthweight as a function of gestational age at delivery
+
+![Mean birthweight for gestational age (+/- SD) from Talge et al., 2014 Pediatrics](figures/gabwt.jpg){width=60%}
+
+## Case Study Data
+
+You will analyze data on birthweight and gestational age at delivery for babies born in North Carolina from 2011-2016. Relevant variables include the following.
+
+- Birthweight in g (primary outcome variable)
+- Gestational age in weeks (babies should gain weight until delivery)
+- Biological sex assigned at birth (boys are heavier on average)
+
+## Case Study Data
+
+- Parity, or the woman's number of births including this one (on average, a woman's later babies are expected to weigh more than the first due to incomplete reversion of physiologic changes that occur during pregnancy to facilitate fetal growth, thus creating a more efficient system for later pregnancies)
+- Plurality (singleton births usually weigh more than twins or higher-order multiples). Note that including multiple births to a mother (whether at one time or over a period of years) is a violation of any assumption of independence of observations.
+
+
+## Case Study Data
+
+- Maternal smoking (smoking is associated with lower birthweight; pregnant women are encouraged to quit smoking)
+- Maternal age (be sure to explore nonlinear trends, as very young mothers and older mothers are often at higher risk)
+- Maternal race (health disparities in birth weight have been identified in the literature, though mechanisms are largely unknown)
+- Hispanic origin of mother
+- Year of birth (useful to determine if there are any time trends)
+- County of residence (very rough proxy for socio-economic status)
+
+## Case Study Goals
+
+- determining which factors are associated with birthweight
+
+- characterizing the relationship between each factor and birthweight
+
+- exploring whether fit of linear regression model is adequate or whether robust regression methods are needed
+
+- estimating the impact of eliminating maternal smoking on birthweight
+
+## Tasks for Case Study 1 Interim Report 
+
+- Produce a 5 page (maximum) report in R markdown that clearly describes your process for model selection and validation. Provide clear interpretations of the associations between each predictor and birth weight in layperson's language.  Figures may be included as appropriate. Code should be fully reproducible.
+
+## Resources for the Case Study 1 Interim Report
+
+An Introduction to Statistical Learning with Applications in R, James et al (2013), Chapter 5: Resampling Methods (free e-book through Duke Libraries)
+
+## AMy add example maybe from the one Jiurui works up to illustrate more than just James example
+
+## Measuring Model Fit
+
+One metric for measuring model fit is the mean squared error, given by $$MSE=\frac{1}{n}\sum_{i=1}^n (y_i-\hat{y}_i))^2.$$. This value will be small when our predictions $\hat{y}_i$ are close to the true values $y_i$.
+
+Data used in model development are often called \emph{training data}, and the MSE called the \emph{training MSE}. Ideally, our model would also work well for new data $(x_0, y_0)$: what does our model tell us about what might happen in the future?  
+
+## Training and Test Data
+
+If we have a large amount of data, we can split our sample into training and test datasets. The test dataset should contain new observations that are not represented in the training dataset. Then a goal is to minimize the \emph{test MSE}, given by $$MSE=\frac{1}{n_{train}}\sum_{i=1}^{n_{train}} (y_{0j}-\hat{y}_{0j})^2,$$ where $\hat{y}_{0j}$ is the predicted response for a new observation in the test dataset using the model developed in the training dataset, and $n_{train}$ is the number of new observations in the test dataset.
+
+## Training and Test Data
+
+Test data are important because of the problem of \emph{overfitting}, which arises when the model is working too hard to find the perfect predictions in the test data and is not broadly generalizable because it has been picking up some patterns that are just reflecting random error. Note, however, that we generally expect the test MSE to be somewhat larger than the training MSE because our model has been developed to minimize the training MSE; overfitting refers to a situation in which a different model (generally a simpler one) fit to the training data would result in a smaller test MSE.
+
+## Evaluating Test MSE
+
+James et al (2013) consider test MSE for a variety of polynomial functions of a predictor variable $x$.
+
+
+![Test MSE for 1st-10th order polynomials in $x$ from James et al (2013)](figures/val1.png){width=60%}
+
+While it is difficult to choose between higher-order polynomials, it is clear that a linear term in $x$ is insufficient.
+
+## Evaluating test MSE
+
+In a small dataset, the random split of the data can have considerable impact on the results, as seen in this figure (also from James) that shows results form 10 different random 50:50 training:test data splits in a sample of just under 400 observations.
+
+![Test MSE for 1st-10th order polynomials in $x$ over 10 splits from James et al (2013)](figures/val2.png){width=60%}
+
+## Cross-Validation
+
+\emph{Cross-Validation} is related to the validation set method but addresses the issue of sensitivity of results to the particular random data split obtained.  \emph{k-Fold Cross Validation} involves splitting the data into $k$ mutually-exclusive groups, called \emph{folds}, and then fitting a model on $k-1$ folds with the $k^{th}$ fold treated as a validation set. We obtain $k$ estimates of the test error and summarize them using the average $$\frac{1}{k}\sum_{i=1}^k MSE_i.$$  \emph{Leave-one-out cross-validation}, in which $k=1$, is a special case (more computationally intensive).
+
+ 
+ - find a good model using the training data and compute the training MSE
+ - 

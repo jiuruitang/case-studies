@@ -1,5 +1,5 @@
 ---
-title: "Week 1: Session name"
+title: "Week 2: Session name"
 ---
 
 ```{r, echo=FALSE, include=FALSE}
