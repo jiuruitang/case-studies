@@ -109,6 +109,7 @@ In a small dataset, the random split of the data can have considerable impact on
 
 \emph{Cross-Validation} is related to the validation set method but addresses the issue of sensitivity of results to the particular random data split obtained.  \emph{k-Fold Cross Validation} involves splitting the data into $k$ mutually-exclusive groups, called \emph{folds}, and then fitting a model on $k-1$ folds with the $k^{th}$ fold treated as a validation set. We obtain $k$ estimates of the test error and summarize them using the average $$\frac{1}{k}\sum_{i=1}^k MSE_i.$$  \emph{Leave-one-out cross-validation}, in which $k=1$, is a special case (more computationally intensive).
 
- 
+## Cross-Validation Steps
+
  - find a good model using the training data and compute the training MSE
  - 

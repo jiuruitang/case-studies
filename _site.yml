@@ -7,7 +7,7 @@ navbar:
     - text: "Home"
       href: index.html
     - text: "Policies"
-      href: w01.html
+      href: policies.html
     - text: "RStudio"
       href: w03.html
     - text: "Case Study 1"
