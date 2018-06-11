@@ -64,6 +64,8 @@ Individual contributions to each submission will be assessed using the fair divi
 
 Each individual case study will be graded based on written reports (interim and final) and an oral presentation. Students may not collaborate with anyone on the individual case study, which should be treated like a take-home exam.
 
+Each case study will have a page limit, and under no circumstances should font sizes less than 11 point be used, with the exception of labels in figures (and then only if they are still clearly legible to readers of all ages).
+
 #### Application exercises:
 
 Short exercises will frequently be administered at the begininning of class to assess progress and identify areas for further development. Students will first complete these individually and hand them in; subsequently, the group will discuss the exercise and turn in a group solution. 

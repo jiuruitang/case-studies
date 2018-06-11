@@ -60,7 +60,7 @@ You should have access to a laptop and bring it to every class, fully charged. T
 | October 31    | Individual CS: Web Scraping | | CS4 Interim Report: Election Prediction Models |
 | November 2    | Individual CS: Web Scraping Work in Groups | CS4 Final Report due by Midnight Nov 5|
 | November 7    | CS4: Presentations: Post Election Diagnostics | Individual CS Interim Report: Analysis Plan  |
-| November 9    | CS5: Missing Data: Where's My Fresh Air? | |
+| November 9    | CS5: Missing Data: How to Find the Answer | |
 | Movember 14   | CS5: Missing Data | |
 | November 16   | CS5: Missing Data | CS5 Interim Report: Patterns of Missing Data |
 | November 28   | CS Lab | Individual CS Draft Report | 

@@ -8,20 +8,18 @@ navbar:
       href: index.html
     - text: "Policies"
       href: policies.html
-    - text: "RStudio"
-      href: w03.html
     - text: "Case Study 1"
-      href: w04.html
+      href: cs01.html
     - text: "Case Study 2"
-      href: w05.html
+      href: cs02.html
     - text: "Case Study 3"
-      href: w06.html
+      href: cs03.html
     - text: "Case Study 4"
-      href: w07.html
+      href: cs04.html
     - text: "Case Study 5"
-      href: w08.html    
+      href: cs05.html    
     - text: "Individual Case Study"
-      href: w08.html
+      href: cs06.html
 output:
   html_document:
     theme: yeti
