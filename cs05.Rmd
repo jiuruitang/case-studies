@@ -1,5 +1,5 @@
 ---
-title: "Week 5: Session name"
+title: "Case Study 5: Surviving Missing Data"
 ---
 
 ```{r, echo=FALSE, include=FALSE}
@@ -11,35 +11,41 @@ library(tidyverse)
 
 # Learning Objectives
 
--
--
--
+- understand different types of missing data mechanisms and potential implications on validity of analysis results
+- understand and apply statistical methods for survival analysis; understand role of missing data induced by censoring of events
+- apply modern methods for handling missing data to analyze time-to-event data for Duke cardiology patients
 
-# Problem Set
-
-Lorem ipsum dolor amet palo santo photo booth coloring book kogi, mustache small batch disrupt 3 wolf moon food truck meggings enamel pin shoreditch yr fam semiotics. Succulents iPhone echo park DIY marfa. Green juice art party tacos truffaut cred. Glossier tacos art party roof party craft beer cold-pressed air plant echo park asymmetrical keffiyeh. Copper mug stumptown migas vegan ennui. Taxidermy taiyaki hexagon, banh mi adaptogen health goth hella tilde etsy 3 wolf moon beard. Mustache kinfolk hell of art party echo park vice health goth venmo iceland skateboard heirloom DIY cold-pressed scenester thundercats.
-
-In stats, we sometimes use equations like this:
-
-$$\sum_{i=1}^n X_i$$
+# Case Study Goals
+Based on data from the Duke Databank for Cardiovascular Diseases, we will explore biological and sociodemographic factors related to survival. In order to 
 
 # Data
 
-Lorem ipsum dolor amet palo santo photo booth coloring book kogi, mustache small batch disrupt 3 wolf moon food truck meggings enamel pin shoreditch yr fam semiotics. Succulents iPhone echo park DIY marfa. Green juice art party tacos truffaut cred. Glossier tacos art party roof party craft beer cold-pressed air plant echo park asymmetrical keffiyeh. Copper mug stumptown migas vegan ennui. Taxidermy taiyaki hexagon, banh mi adaptogen health goth hella tilde etsy 3 wolf moon beard. Mustache kinfolk hell of art party echo park vice health goth venmo iceland skateboard heirloom DIY cold-pressed scenester thundercats.
+-Jiurui post data on Sakai with data dictionary linked here; variables to include in dataset include the following:  AGE_G, GENDER, RACE_G, YRCATH_G, CHFSEV, HXCEREB, HXCHF, HXCOPD, HXDIAB, HXHTN, HXMI, HXHYL, HXSMOKE, HEIGHT_R, WEIGHT_R, (calculate BMI from height and weight),  S3, LMST, LVEF_R, NUMDZV, DEATH, DAYS2LKA
+-Jiurui let me know % with missing data for each variable. Also subset to one observation per person (repeat events are included, but there should be only one death)
+-NOtes: look at race by gender interaction, 
+- outcome should be time to death. Have Jiurui construct this bearing in mind the censoring variable
 
-```{r, echo=FALSE}
-kable(head(mtcars), "html") %>%
-  kable_styling(bootstrap_options = c("striped", "hover"))
-```
+# Reports
+
+- Interim report 1: investigate patterns of missing data and comment on potential for bias in analysis results
+- Final report: prepare a report, not to exceed 5 pages and accompanied by useful visualizations, describing survival as a function of predictor variables of interest
 
 
-Here's an exmaple of downloading a file stored in the github repository. [Click here.](https://raw.githubusercontent.com/AmyRFinnegan/case-studies-demo/master/data/example.R)
+# Resources
 
-Or you could share a file via [Box](https://duke.box.com/s/mlj6vgtxqqy8c0krw2t9j121l3op7k3l).
+Amy to update
+
 
 # Slides
 
 
-If you had slides to link to, you could do that by saving a file in your repository and linking to it like this: [slide link.](decks/w01_deck.html)
+[CATHR data: Amy](decks/cs05_1_deck.html)
 
-Lorem ipsum dolor amet palo santo photo booth coloring book kogi, mustache small batch disrupt 3 wolf moon food truck meggings enamel pin shoreditch yr fam semiotics. Succulents iPhone echo park DIY marfa. Green juice art party tacos truffaut cred. Glossier tacos art party roof party craft beer cold-pressed air plant echo park asymmetrical keffiyeh. Copper mug stumptown migas vegan ennui. Taxidermy taiyaki hexagon, banh mi adaptogen health goth hella tilde etsy 3 wolf moon beard. Mustache kinfolk hell of art party echo park vice health goth venmo iceland skateboard heirloom DIY cold-pressed scenester thundercats.
+[Missing data Tutorial: Jiurui](decks/cs05_2_deck.html)
+
+
+[Survival analysis tutorial: Jiurui ](decks/cs05_3_deck.html)
+
+
+
+
