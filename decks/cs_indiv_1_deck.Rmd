@@ -1,0 +1,19 @@
+---
+title: Web Scraping for Career Development
+output: 
+  revealjs::revealjs_presentation:
+    theme: night
+    highlight: tango
+    center: true
+    transition: none
+    css: styles.css
+    fig_caption: true
+    reveal_options:
+      progress: true
+      slideNumber: true
+      
+  
+---
+
+
+## Web Scraping

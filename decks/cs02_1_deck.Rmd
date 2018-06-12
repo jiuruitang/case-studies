@@ -1,0 +1,77 @@
+---
+title: Infant Mortality Around the World
+output: 
+  revealjs::revealjs_presentation:
+    theme: night
+    highlight: tango
+    center: true
+    transition: none
+    css: styles.css
+    fig_caption: true
+    reveal_options:
+      progress: true
+      slideNumber: true
+      
+  
+---
+
+
+## Case Study 2: Data Visualization
+
+Using data relevant to countries around the world, we will explore data science tools to tell complex stories through data visualization. We will consider data on infant mortality in class, and for the report you are welcome to use any data that can be plotted by country.
+
+
+
+## Case Study Data
+
+- Information for plotting data by country: http://dev.maxmind.com/static/csv/codes/country_latlon.csv DOES THIS NEED TO BE UPDATED? FULLY UP TO DATE IN TERMS OF NEW COUNTRIES?
+- CIA Factbook Data: https://old.datahub.io/dataset/cia-world-factbook (update if needed)
+- World Bank Data: https://data.worldbank.org 
+- Our World in Data: https://ourworldindata.org 
+- Data of your own choosing on world issues
+
+## Case Study Goals
+
+Using data from the World Bank or a complex data source of your own choosing, 
+- create a Shiny app in R to illustrate an aspect of our world in data
+- create an accompanying Tableau dashboard interactive visual presentation of our world in data
+- explain your figures to class in an oral presentation by the group
+
+##Case for Class: Infant Mortality
+
+*Infant death* is defined as the death of a live-born infant during the first year of life. The *infant mortality rate* is the number of infant deaths per 1000 live births. The infant mortality rate, which is relatively easily measured even in resource-poor settings, is often used as a marker of the overall health of a society because of the overlap in causes of infant mortality and factors that are likely to influence the health of an overall population, such as general living conditions, poverty and socioeconomic status, quality of medical care, and rates of illness. Infant mortality rates can be compared across different areas or across time to evaluate the impact of public health program or to determine where new investments in health are needed.
+
+##Changes in US Infant Mortality over Time
+
+![Infant Mortality in US, 1915-2007 (NCHS)](figures/infantmortality.png)
+
+What do you think about the way the authors chose to display time in the plot?
+
+##Disparities in Infant Mortality Rate
+While overall infant mortality rates in the US have declined over time, major disparities in infant mortality rates exist, shown here as a function of race and ethnicity.
+![Infant Mortality in US by Race/Ethnicity, 2005-2007](figures/infantmortalityrace.png){width=55%}
+
+##Infant Mortality Worldwide
+
+Worldmapper http://archive.worldmapper.org/display.php?selected=261 created a visualization of infant mortality worldwide in 2002, rescaling each country by its contribution to infant deaths worldwide. 
+
+![2002 Contributions to Worldwide Infant Mortality](figures/mort_scale.png) 
+
+
+##Extracting Latitude and Longitude of Country Centroids
+
+Provide R code and details for doing this in multiple slides
+
+##Merging Spatial Data with Infant Mortality Data
+
+Provide R code and details for doing this in multiple slides -- leave data error on country names in there 
+
+##Initial Plot
+Have code for initial plot in Nolan/Temple Lang figure 11.4
+
+##Corrected Data Merging
+Identify issue and give code to merge data correctly, producing figure 11.6
+
+
+
+

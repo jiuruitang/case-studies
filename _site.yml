@@ -1,27 +1,25 @@
 name: "Case Studies"
 output_dir: "."
 navbar:
-  title: "Data Case Studies"
+  title: "Case Studies"
   type: inverse
   left:
     - text: "Home"
       href: index.html
-    - text: "Week 1"
-      href: w01.html
-    - text: "Week 2"
-      href: w02.html
-    - text: "Week 3"
-      href: w03.html
-    - text: "Week 4"
-      href: w04.html
-    - text: "Week 5"
-      href: w05.html
-    - text: "Week 6"
-      href: w06.html
-    - text: "Week 7"
-      href: w07.html
-    - text: "Week 8"
-      href: w08.html
+    - text: "Policies"
+      href: policies.html
+    - text: "Case Study 1"
+      href: cs01.html
+    - text: "Case Study 2"
+      href: cs02.html
+    - text: "Case Study 3"
+      href: cs03.html
+    - text: "Case Study 4"
+      href: cs04.html
+    - text: "Case Study 5"
+      href: cs05.html    
+    - text: "Individual Case Study"
+      href: cs_indiv.html
 output:
   html_document:
     theme: yeti
