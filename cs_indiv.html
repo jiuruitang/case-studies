@@ -11,7 +11,7 @@
 
 
 
-<title>Case Study 5: Surviving Missing Data</title>
+<title>Individual Case Study</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -301,7 +301,7 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Case Study 5: Surviving Missing Data</h1>
+<h1 class="title toc-ignore">Individual Case Study</h1>
 
 </div>
 
@@ -309,35 +309,39 @@ div.tocify {
 <div id="learning-objectives" class="section level1">
 <h1>Learning Objectives</h1>
 <ul>
-<li>understand different types of missing data mechanisms and potential implications on validity of analysis results</li>
-<li>understand and apply statistical methods for survival analysis; understand role of missing data induced by censoring of events</li>
-<li>apply modern methods for handling missing data to analyze time-to-event data for Duke cardiology patients</li>
+<li>learn to scrape data from HTML pages</li>
+<li>manipulate data obtained from HTML pages in R</li>
+<li>create helpful R functions to analyze web data and extract useful information</li>
+<li>create interactive function/app to facilitate exploratory analysis of career-related data</li>
 </ul>
 </div>
 <div id="case-study-goals" class="section level1">
 <h1>Case Study Goals</h1>
-<p>Based on data from the Duke Databank for Cardiovascular Diseases, we will explore biological and sociodemographic factors related to survival. In order to</p>
+<p>In the individual case study, you will design a Shiny app or other presentation/visualization of data related to your career interests, presenting your work in class in December. Your presentation will describe your own career interests and lead the class through the resources you have designed to lead students with similar interests to discovering relevant information for their own career searches (e.g., data science jobs on the East Coast, graduate programs in statistics in cities with top 20 law schools, master’s programs in statistics/data science that provide funding opportunities).</p>
 </div>
 <div id="data" class="section level1">
 <h1>Data</h1>
-<p>-Jiurui post data on Sakai with data dictionary linked here; variables to include in dataset include the following: AGE_G, GENDER, RACE_G, YRCATH_G, CHFSEV, HXCEREB, HXCHF, HXCOPD, HXDIAB, HXHTN, HXMI, HXHYL, HXSMOKE, HEIGHT_R, WEIGHT_R, (calculate BMI from height and weight), S3, LMST, LVEF_R, NUMDZV, DEATH, DAYS2LKA -Jiurui let me know % with missing data for each variable. Also subset to one observation per person (repeat events are included, but there should be only one death) -NOtes: look at race by gender interaction, - outcome should be time to death. Have Jiurui construct this bearing in mind the censoring variable</p>
+<ul>
+<li>Data should be obtained via web scraping. Software should be able to relatively easily accommodate regular updates to the data, to the extent possible.</li>
+</ul>
 </div>
 <div id="reports" class="section level1">
 <h1>Reports</h1>
 <ul>
-<li>Interim report 1: investigate patterns of missing data and comment on potential for bias in analysis results</li>
-<li>Final report: prepare a report, not to exceed 5 pages and accompanied by useful visualizations, describing survival as a function of predictor variables of interest</li>
+<li>Interim report 1: plan for design of individual case study</li>
+<li>Interim report 2: draft of final report</li>
+<li>Final report: 3 page maximum written report and oral presentation in class, guides students through your newly designed resource</li>
 </ul>
 </div>
 <div id="resources" class="section level1">
 <h1>Resources</h1>
-<p>Amy/Jiurui to update</p>
+<p>Nolan and Temple Lang, Chapter 12</p>
 </div>
 <div id="slides" class="section level1">
 <h1>Slides</h1>
-<p><a href="decks/cs05_1_deck.html">Duke Databank for Cardiovascular Disease</a></p>
-<p><a href="decks/cs05_2_deck.html">Missing data Tutorial: Jiurui</a></p>
-<p><a href="decks/cs05_3_deck.html">Survival analysis tutorial: Jiurui</a></p>
+<p><a href="decks/cs_indiv_1_deck.html">Duke Databank for Cardiovascular Disease</a></p>
+<p><a href="decks/cs_indiv_2_deck.html">Exploratory Web Scraping: Jiurui based on sections through 12.3</a></p>
+<p><a href="decks/cs_indiv_3_deck.html">Web Scraping and Analysis: Jiurui based on 12.4-12.9</a></p>
 </div>
 
 

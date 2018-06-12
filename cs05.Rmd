@@ -33,13 +33,13 @@ Based on data from the Duke Databank for Cardiovascular Diseases, we will explor
 
 # Resources
 
-Amy to update
+Amy/Jiurui to update
 
 
 # Slides
 
+[Duke Databank for Cardiovascular Disease](decks/cs05_1_deck.html)
 
-[CATHR data: Amy](decks/cs05_1_deck.html)
 
 [Missing data Tutorial: Jiurui](decks/cs05_2_deck.html)
 
